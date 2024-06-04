@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Aroma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3e5ab;
+            color: #3e2723;
+            margin: 0;
+            padding: 0;
+            animation: backgroundAnimation 10s infinite;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-color: #f3e5ab; }
+            50% { background-color: #fff3e0; }
+            100% { background-color: #f3e5ab; }
+        }
+        header {
+            background-color: #795548;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lobster', cursive;
+            animation: headerAnimation 5s infinite alternate;
+        }
+        @keyframes headerAnimation {
+            0% { background-color: #795548; }
+            50% { background-color: #6d4c41; }
+            100% { background-color: #795548; }
+        }
+        h1 {
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+        }
+        p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .recipe {
+            background-color: #fff3e0;
+            border: 1px solid #d7ccc8;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .recipe:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            border-bottom: 2px solid #8d6e63;
+            padding-bottom: 10px;
+            font-family: 'Lobster', cursive;
+            font-size: 2em;
+        }
+        h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li::before {
+            content: "☕ ";
+            color: #795548;
+        }
+        .steps {
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #795548;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+        }
+        .back-button {
+          position: absolute;
+          top: 30px;
+          left: 100px;
+        }
+        .back-button img {
+          width: 100px;
+          height: 100px;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dulce Aroma</h1>
+        <p>Recetas de Café con el Delicioso Toque de San Luis Potosí</p>
+    </header>
+<a href="inicio.html" class="back-button">
+  <img  src="cafeteria.png" alt="Coffee Cup" width="100" height="100">
+</a>
+    <div class="container">
+        <div class="recipe">
+            <h2>Panqué de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>100 gramos de mantequilla Gloria® Gourmet Le Cordon Bleu</li>
+                <li>1 taza de azúcar</li>
+                <li>1 cucharada de extracto de vainilla</li>
+                <li>2 huevos, separados</li>
+                <li>1 ½ tazas de harina</li>
+                <li>2 cucharaditas de polvo para hornear</li>
+                <li>1 pizca de sal</li>
+                <li>2 cucharadas de café soluble</li>
+                <li>½ taza de leche de vaca</li>
+            </ul>
+            <h3>Preparación:</h3>
+            <ol class="steps">
+                <li>Precalienta el horno a 180 grados centígrados.</li>
+                <li>Engrasa y enharina un molde especial para panqué.</li>
+                <li>Mezcla los ingredientes secos. Bate la mantequilla para acremarla y adiciona el azúcar, las yemas y el extracto de vainilla.</li>
+                <li>Mezcla la leche con el café.</li>
+                <li>Agrega a la mezcla de mantequilla los secos y la leche con café.</li>
+                <li>Bate las claras a punto de turrón e incorpórala a la mezcla con una espátula de manera envolvente.</li>
+                <li>Vierte la mezcla en un molde y hornea por 45 minutos. Una vez que retiras el panqué del horno, permite que se enfríe antes de desmoldarlo.</li>
+            </ol>
+        </div>
+        
+        <div class="recipe">
+            <h2>Mascarilla de café + bicarbonato + miel</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>1 cucharadita de café molido</li>
+                <li>1 cucharada de miel</li>
+                <li>1 cucharadita de bicarbonato de sodio</li>
+                <li>1 cucharada de azúcar granulada</li>
+            </ul>
+            <h3>Preparación:</h3>
+            <ol class="steps">
+                <li>Licúa todos los ingredientes hasta lograr una pasta.</li>
+                <li>Con la cara limpia, aplica la pasta de café, miel y bicarbonato sobre tu rostro y cuello dando un masaje circular, desde el centro hacia afuera; y de arriba hacia abajo.</li>
+                <li>Deja la mascarilla durante 10-15 minutos, sin esperar a que se seque por completo, retírala con agua tibia.</li>
+                <li>Seca y, si no tienes la piel mixta o grasa, suma una crema hidratante.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Galletas de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>1 taza de harina de trigo</li>
+                <li>1 cucharadita de café instantáneo</li>
+                <li>½ taza de mantequilla</li>
+                <li>½ taza de azúcar</li>
+                <li>1 huevo</li>
+                <li>1 cucharadita de esencia de vainilla</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>En un tazón, mezcla la mantequilla ablandada con el azúcar hasta obtener una mezcla suave y cremosa.</li>
+                <li>Agrega el huevo y la esencia de vainilla, y bate bien.</li>
+                <li>Incorpora la harina y el café instantáneo tamizados, mezclando hasta que se forme una masa homogénea.</li>
+                <li>Forma pequeñas bolitas de masa y colócalas en una bandeja para hornear.</li>
+                <li>Aplana ligeramente cada bolita con un tenedor.</li>
+                <li>Hornea las galletas en un horno precalentado a 180°C durante unos 15 minutos o hasta que estén doradas.</li>
+                <li>Deja enfriar antes de disfrutarlas.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Chocolate de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>200g de chocolate negro</li>
+                <li>1 cucharadita de café molido</li>
+                <li>½ taza de crema de leche</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Derrite el chocolate negro troceado en un recipiente resistente al calor sobre una olla con agua caliente, removiendo suavemente.</li>
+                <li>Añade la crema de leche y el café molido al chocolate derretido, mezclando hasta que estén bien incorporados.</li>
+                <li>Vierte la mezcla en moldes para chocolate y golpéalos suavemente sobre la encimera para eliminar burbujas de aire.</li>
+                <li>Refrigera hasta que el chocolate se solidifique por completo.</li>
+                <li>Desmolda con cuidado y disfruta de tus chocolates de café caseros.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Jabón de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>1 taza de jabón de glicerina</li>
+                <li>2 cucharadas de café molido</li>
+                <li>1 cucharadita de aceite esencial de café</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Corta el jabón de glicerina en trozos y derrítelo en el microondas en intervalos cortos.</li>
+                <li>Añade el café molido y el aceite esencial de café al jabón derretido, mezclando bien.</li>
+                <li>Vierte la mezcla en moldes de jabón y deja reposar hasta que se solidifique por completo.</li>
+                <li>Desmolda con cuidado y disfruta de tu jabón de café casero en la ducha.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Perfume de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>½ taza de alcohol</li>
+                <li>1 cucharadita de café en grano</li>
+                <li>5 gotas de aceite esencial de café</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Coloca los granos de café en un frasco de vidrio limpio y vierte el alcohol sobre ellos.</li>
+                <li>Agrega el aceite esencial de café al frasco y agita suavemente.</li>
+                <li>Tapa el frasco herméticamente y deja reposar la mezcla en un lugar oscuro durante al menos una semana.</li>
+                <li>Filtra la mezcla con un colador fino para obtener el perfume de café puro.</li>
+                <li>Transfiere el perfume a un frasco pulverizador y disfruta de su aroma único.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Crema Corporal de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>½ taza de manteca de karité</li>
+                <li>2 cucharadas de café molido</li>
+                <li>1 cucharada de aceite de coco</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Derrite la manteca de karité y el aceite de coco en un recipiente resistente al calor.</li>
+                <li>Agrega el café molido a la mezcla derretida y remueve hasta que esté bien incorporado.</li>
+                <li>Deja que la crema se enfríe a temperatura ambiente y se solidifique ligeramente.</li>
+                <li>Bate la crema con una batidora de mano hasta obtener una textura suave y cremosa.</li>
+                <li>Transfiere la crema a un recipiente limpio y hermético para su uso diario.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Vela Artesanal de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>Cera de soja</li>
+                <li>Mecha de vela</li>
+                <li>Café en grano</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Derrite la cera de soja en un recipiente resistente al calor y vierte una pequeña cantidad en el fondo de un recipiente para vela.</li>
+<li>Coloca la mecha en el centro del recipiente y asegúrala en su lugar con un palillo.</li>
+                <li>Vierte el resto de la cera derretida alrededor de la mecha y agrega granos de café alrededor para decorar.</li>
+                <li>Deja que la vela se enfríe y solidifique por completo antes de cortar la mecha y encenderla.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Barras Energéticas de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>1 taza de avena</li>
+                <li>½ taza de almendras</li>
+                <li>¼ taza de café en polvo</li>
+                <li>¼ taza de miel</li>
+                <li>¼ taza de mantequilla de almendra</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Mezcla la avena, las almendras, el café en polvo, la miel y la mantequilla de almendra en un tazón grande.</li>
+                <li>Presiona la mezcla en un molde rectangular forrado con papel encerado para que sea más fácil de desmoldar.</li>
+                <li>Refrigera la mezcla durante al menos una hora para que se endurezca.</li>
+                <li>Corta la mezcla en barras del tamaño deseado y envuélvelas individualmente para llevar como un delicioso y energético refrigerio.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Perfume de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>½ taza de alcohol</li>
+                <li>1 cucharadita de café en grano</li>
+                <li>5 gotas de aceite esencial de café</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Coloca los granos de café en un frasco de vidrio limpio y vierte el alcohol sobre ellos.</li>
+                <li>Agrega el aceite esencial de café al frasco y agita suavemente.</li>
+                <li>Tapa el frasco herméticamente y deja reposar la mezcla en un lugar oscuro durante al menos una semana.</li>
+                <li>Filtra la mezcla con un colador fino para obtener el perfume de café puro.</li>
+                <li>Transfiere el perfume a un frasco pulverizador y disfruta de su aroma único.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Crema Corporal de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>½ taza de manteca de karité</li>
+                <li>2 cucharadas de café molido</li>
+                <li>1 cucharada de aceite de coco</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Derrite la manteca de karité y el aceite de coco en un recipiente resistente al calor.</li>
+                <li>Agrega el café molido a la mezcla derretida y remueve hasta que esté bien incorporado.</li>
+                <li>Deja que la crema se enfríe a temperatura ambiente y se solidifique ligeramente.</li>
+                <li>Bate la crema con una batidora de mano hasta obtener una textura suave y cremosa.</li>
+                <li>Transfiere la crema a un recipiente limpio y hermético para su uso diario.</li>
+            </ol>
+        </div>
+
+        <div class="recipe">
+            <h2>Vela Artesanal de Café</h2>
+            <h3>Ingredientes:</h3>
+            <ul>
+                <li>Cera de soja</li>
+                <li>Mecha de vela</li>
+                <li>Café en grano</li>
+            </ul>
+            <h3>Proceso:</h3>
+            <ol class="steps">
+                <li>Derrite la cera de soja en un recipiente resistente al calor y vierte una pequeña cantidad en el fondo de un recipiente para vela.</li>
+                <li>Coloca la mecha en el centro del recipiente y asegúrala en su lugar con un palillo.</li>
+                <li>Vierte el resto de la cera derretida alrededor de la mecha y agrega granos de café alrededor para decorar.</li>
+                <li>Deja que la vela se enfríe y solidifique por completo antes de cortar la mecha y encenderla.</li>
+            </ol>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>En Dulce Aroma, nuestra tienda inspirada en el café de San Luis Potosí, te invitamos a disfrutar de estas deliciosas creaciones caseras con el auténtico sabor del café de la región. ¡Esperamos que estas recetas te transporten a un mundo de aromas y sabores únicos!</p>
+    </footer>
+</body>
+</html>

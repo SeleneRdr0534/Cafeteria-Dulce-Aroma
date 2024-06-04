@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFETERÍA: DULCE AROMA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #b5651d;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Brush Script MT', cursive;
+        }
+        h2 {
+            color: #b5651d;
+            font-family: Arial, sans-serif;
+            border-bottom: 2px solid #b5651d;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .product img {
+            max-width: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product h2 {
+            color: #b5651d;
+        }
+        .product p {
+            color: #777;
+        }
+        .product input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .product input[type="number"] {
+            width: 60px;
+            margin-left: 10px;
+        }
+        .total {
+            text-align: right;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .total span {
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #b5651d;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #994e17;
+        }
+        .btn:active {
+            transform: scale(1.05);
+        }
+
+        /* Estilos del alerta */
+        .alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+        .alert.success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .alert.error {
+            background-color: #f44336;
+            color: white;
+        }
+        .back-button {
+          position: absolute;
+          top: 30px;
+          left: 100px;
+        }
+        .back-button img {
+          width: 100px;
+          height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <a href="inicio.html" class="back-button">
+                <img src="cafeteria.png" alt="Coffee Cup" width="100" height="100">
+            </a>
+        <h1>CAFETERÍA: DULCE AROMA</h1>
+        <h2>Productos</h2>
+        <div id="product-list">
+            <!-- Productos generados por JavaScript -->
+        </div>
+        <button class="btn" onclick="calculateTotal()">Calcular Total</button>
+        <button class="btn" onclick="sendProducts()">Enviar Productos</button>
+        <div class="total" id="total">Total a pagar: $<span>0.00</span></div>
+        <!-- Alerta -->
+        <div class="alert" id="alertBox"></div>
+    </div>
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "Panqué de café",
+                price: 50.00,
+                description: "Panqué de café con ingredientes especiales y un toque de especias para un sabor único.",
+                image: "Panque_de_cafe.jpeg"
+            },
+            {
+                id: 2,
+                name: "Crema corporal de café",
+                price: 20.00,
+                description: "Crema corporal de café artesanal, hidrata y revitaliza tu piel con el aroma a café.",
+                image: "Crema_corporal_cafe.jpeg"
+            },
+            {
+                id: 3,
+                name: "Perfume de café",
+                price: 30.00,
+                description: "Perfume de café artesanal con un aroma duradero y envolvente, ideal para cualquier ocasión.",
+                image: "Perfume_cafe.jpeg"
+            },
+            {
+                id: 4,
+                name: "Galletas de café",
+                price: 25.00,
+                description: "Galletas con sabor a café, paquete de 10. Crujientes y deliciosas, perfectas para acompañar tu café.",
+                image: "galletas_cafe.jpeg"
+            },
+            {
+                id: 5,
+                name: "Jabón de café",
+                price: 15.00,
+                description: "Jabón artesanal con café, exfolia suavemente tu piel mientras la nutre con sus propiedades naturales.",
+                image: "jabon_de-cafe.jpeg"
+            },
+            {
+                id: 6,
+                name: "Chocolates de café",
+                price: 40.00,
+                description: "Chocolates rellenos de crema de café, caja de 12. Una experiencia dulce y placentera para los amantes del café.",
+                image: "Chocolate_de_cafe.jpeg"
+            },
+            {
+                id: 7,
+                name: "Barritas energéticas de café",
+                price: 35.00,
+                description: "Barritas energéticas con extracto de café, paquete de 5. Ideales para un impulso de energía durante el día.",
+                image: "images.jpeg"
+            },
+            {
+                id: 8,
+                name: "Vela de café",
+                price: 50.00,
+                description: "Vela artesanal de café, crea un ambiente cálido y acogedor con su aroma a café.",
+                image: "Vela_artesanal_cafe.jpeg"
+            },
+            {
+                id: 9,
+                name: "Café molido",
+                price: 90.00,
+                description: "Café molido de alta calidad medio kg a 90, perfecto para preparar deliciosas tazas de café con un sabor intenso y aromático ",
+                image: "Café_molido.jpeg"
+            },
+            {
+                id: 10,
+                name: "Café en grano",
+                price: 85.00,
+                description: "Café en grano seleccionado cuidadosamente, medio kilogramo 85, ideal para aquellos que prefieren moler su café justo antes de prepararlo, para disfrutar de todo su aroma y sabor.",
+                image: "Café_en_grano.jpeg"
+            }
+        ];
+
+        function renderProducts() {
+            const productList = document.getElementById("product-list");
+            productList.innerHTML = "";
+            products.forEach(product => {
+                const productDiv = document.createElement("div");
+                productDiv.className = "product";
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="product-details">
+                        <h2>${product.name}</h2>
+                        <p>${product.description}</p>
+                        <p>Precio: $${product.price.toFixed(2)}</p>
+                        <label>
+                            <input type="checkbox" name="product" value="${product.id}" data-price="${product.price}"> Seleccionar
+                        </label>
+                        <input type="number" name="quantity" min="1" value="1" disabled>
+                    </div>
+                `;
+                productList.appendChild(productDiv);
+            });
+
+            document.querySelectorAll('input[name="product"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const quantityInput = this.closest('.product').querySelector('input[name="quantity"]');
+                    quantityInput.disabled = !this.checked;
+                });
+            });
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('input[name="product"]:checked').forEach(checkbox => {
+                const productId = checkbox.value;
+                const productPrice = parseFloat(checkbox.getAttribute("data-price"));
+                const quantity = parseInt(checkbox.closest('.product').querySelector('input[name="quantity"]').value);
+                total += productPrice * quantity;
+            });
+            document.getElementById("total").querySelector("span").textContent = total.toFixed(2);
+        }
+
+        function sendProducts() {
+            const total = parseFloat(document.getElementById("total").querySelector("span").textContent);
+            const alertBox = document.getElementById("alertBox");
+            alertBox.textContent = `Productos enviados. Total a pagar: $${total.toFixed(2)}`;
+            alertBox.classList.add('alert', 'success');
+            alertBox.style.display = 'block';
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 3000);
+        }
+
+        // Render products on page load
+        renderProducts();
+    </script>
+</body>
+</html>
